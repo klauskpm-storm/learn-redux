@@ -13,6 +13,7 @@ export default class Single extends Component {
     render () {
         let i = this.props.posts.findIndex(this.isCurrentPost.bind(this));
         let post = this.props.posts[i];
+        let postComments = this.props.comments[post.code] || [];
 
         return (
             <div className="single-photo">
@@ -20,7 +21,7 @@ export default class Single extends Component {
                     post={post}
                     i={i}
                     {...this.props} />
-                <Comments/>
+                <Comments postComments={postComments}/>
             </div>
         )
     }
