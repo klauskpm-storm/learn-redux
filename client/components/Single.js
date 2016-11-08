@@ -21,7 +21,9 @@ export default class Single extends Component {
                     post={post}
                     i={i}
                     {...this.props} />
-                <Comments postComments={postComments}/>
+                <Comments
+                    {...this.props}
+                    postComments={postComments}/>
             </div>
         )
     }
